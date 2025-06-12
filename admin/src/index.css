@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+* {
+  font-family: Outfit;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #a9a9a9;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@theme{
+  --color-navbar: hsl(var(--navbar));
+  --color-tomato: hsl(var(--tomato));
+  --color-button-hover: hsl(var(--button-hover));
+  --color-view-more-button: hsl(var(--view-more-button));
+  --color-transparent-background: hsl(var(--transparent-background));
+
+
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+
+  @keyframes fade-in{
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer base{
+  :root{
+    --navbar: 226 27% 39%;
+    --tomato: 9 100% 64%;
+    --button-hover: 9 100% 97%;
+    --view-more-button: 0 0% 45%;
+    --transparent-background: 180 2% 50%;
+  }
+}
